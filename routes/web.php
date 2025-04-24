@@ -7,7 +7,7 @@ Route::get('/', [Controllers\HomeController::class, 'index'])->name('home.index'
 Route::get('product/{category}', [Controllers\HomeController::class, 'product'])->name('home.product');
 Route::get('category/{category}', [Controllers\HomeController::class, 'category'])->name('home.category');
 Route::get('search', [Controllers\HomeController::class, 'search'])->name('home.search');
-Route::get('home', [Controllers\HomeController::class, 'redir_admin'])->name('home.redir_admin');
+Route::get('home', [Controllers\HomeController::class, 'redirectToAdmin'])->name('home.redirectToAdmin');
 
 Route::group(['middleware' => 'revalidate'], function() {
     Auth::routes(['register' => false,'reset' => false]);
@@ -31,7 +31,7 @@ Route::group(['middleware' => 'revalidate'], function() {
     });
 
     // Profile routes
-    Route::prefix(' ')->group(function () {
+    Route::prefix('profile')->group(function () {
         Route::get('/', [App\Http\Controllers\AdminController::class, 'profile'])->name('admin.profile');
         Route::post('update', [App\Http\Controllers\AdminController::class, 'update_profile'])->name('admin.update_profile');
     });

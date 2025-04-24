@@ -53,7 +53,7 @@
                                 <td><img src="{{ url_images('gambar', $item->image) }}" class="img-fluid" style="width:80px;"></td>
                                 <td>{{ $item->category_name }}</td>
                                 <td>{{ $item->product_name }}</td>
-                                <td>Rp{{ number_format($item->price) }},-</td>
+                                <td>₹ {{ number_format($item->price) }},-</td>
                                 <td>{{ $item->created_at }}</td>
                                 <td>
                                     <a href="javascript:void(0)" data-id="{{ $item->id }}" class="btn btn-success btn-sm edit-btn" title="Edit">
