@@ -50,7 +50,7 @@
                         @forelse($products as $item)
                             <tr>
                                 <td>{{ $no }}</td>
-                                <td><img src="{{ url_images('gambar', $item->image) }}" class="img-fluid" style="width:80px;"></td>
+                                <td><img src="{{ url_images('image', $item->image) }}" class="img-fluid" style="width:80px;"></td>
                                 <td>{{ $item->category_name }}</td>
                                 <td>{{ $item->product_name }}</td>
                                 <td>₹ {{ number_format($item->price) }},-</td>
